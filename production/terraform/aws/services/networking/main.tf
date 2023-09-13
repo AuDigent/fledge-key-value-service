@@ -34,6 +34,11 @@ resource "aws_vpc" "vpc" {
 # Get information about available AZs.
 data "aws_availability_zones" "azs" {
   state = "available"
+  filter {
+    name = "opt-in-status"
+    values = ["opt-in-not-required"]
+
+}
 }
 
 # Create public subnets used to connect to instances in private subnets.

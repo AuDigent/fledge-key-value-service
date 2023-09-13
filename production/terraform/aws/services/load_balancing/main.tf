@@ -33,7 +33,7 @@ resource "aws_lb" "public_alb" {
 }
 
 resource "aws_route53_record" "alb_alias_record" {
-  name    = "${var.environment}.${var.root_domain}"
+  name    = "${var.root_domain}"
   type    = "A"
   zone_id = var.root_domain_zone_id
 
